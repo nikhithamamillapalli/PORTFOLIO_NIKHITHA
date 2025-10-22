@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Smooth scroll for the whole site */
+  * {
+    scroll-behavior: smooth;
+  }
+
+  /* Base body styling — clean and calm */
+  body {
+    @apply antialiased bg-[#f8fafc] text-gray-700 font-sans;
+    font-family: 'Poppins', 'Inter', 'Nunito', sans-serif;
+  }
+
+  /* Headings — soft gray for elegance */
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-gray-800 font-semibold;
+  }
+
+  /* Regular text — lighter tone for balance */
+  p, span, li {
+    @apply text-gray-600;
+  }
+
+  /* Links — pastel blue (no orange) */
+  a {
+    @apply text-sky-500 hover:text-sky-600 transition-colors duration-200;
+  }
+
+  /* Buttons — soft lavender / blue instead of orange */
+  button {
+    @apply bg-indigo-200 text-gray-800 font-medium px-4 py-2 rounded-xl 
+           hover:bg-indigo-300 transition-all duration-200 shadow-sm;
+  }
+
+  /* Sections — subtle white background with gentle shadow */
+  section {
+    @apply bg-white rounded-2xl shadow-md p-6;
+  }
+
+  /* Inputs and textareas — minimal and soft */
+  input, textarea {
+    @apply border border-gray-200 rounded-lg px-3 py-2 bg-gray-50 
+           focus:outline-none focus:ring-2 focus:ring-sky-200;
+  }
+}
+
+@layer utilities {
+  /* Smooth animations */
+  @keyframes slideIn {
+    from {
+      width: 0;
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
+  }
+}
